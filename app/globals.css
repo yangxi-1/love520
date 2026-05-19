@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.perspective {
+  perspective: 1400px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes heartRain {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+.animate-heartRain {
+  animation-name: heartRain;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes envelopeOpen {
+
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(-180deg);
+  }
+
+}
+
+.animate-envelopeOpen {
+  animation: envelopeOpen 1.2s ease forwards;
+}
+
+@keyframes endingFade {
+
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+}
+
+.animate-endingFade {
+  animation: endingFade 6s ease forwards;
+}
+
+@keyframes endingFade {
+
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+}
+
+.animate-endingFade {
+  animation: endingFade 6s ease forwards;
+}
+
+@keyframes darkFade {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.45;
+  }
+
+}
+
+.animate-darkFade {
+
+  animation: darkFade 4s ease forwards;
+
+}
+
+@keyframes pageDarken {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.55;
+  }
+
+}
+
+.animate-pageDarken {
+
+  animation: pageDarken 5s ease forwards;
+
+}
